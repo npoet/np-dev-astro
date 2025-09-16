@@ -1,5 +1,2 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'NP.dev';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = 'npoet.dev';
+export const SITE_DESCRIPTION = 'Personal dev blog and portfolio site';
