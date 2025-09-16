@@ -32,7 +32,7 @@ Soup man good
 
 ##### UNLV 38 - 31 Idaho State
 
-The fighting Alex Orgi's outlast Ore-Ida (why wasnt this one in ireland???)
+The fighting Alex Orgis outlast Ore-Ida (why wasn't this one in ireland???)
 
 ##### Kansas 31 - 7 Fresno State
 
