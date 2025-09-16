@@ -1,0 +1,153 @@
+/* Scoped scoreboard styles
+   Based on original globals.css + page.module.css,
+   wrapped under .scoreboard-section so they only apply inside the island.
+*/
+
+.scoreboard-section {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+
+  --accent: #2337ff;
+  --accent-dark: #000d8a;
+  --gray: 96, 115, 159;
+  --gray-light: 229, 233, 240;
+  --gray-dark: 34, 41, 57;
+  margin-bottom: 3rem; /* Add spacing below the island */
+}
+
+/* grid for game cards */
+.scoreboard-section .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: var(--max-width);
+  margin: 2rem auto;
+}
+
+/* shared card styles */
+.scoreboard-section .scheduled-game,
+.scoreboard-section .live-game,
+.scoreboard-section .final-game {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0.05);
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  transition: background 200ms, border 200ms;
+}
+
+/* hover effect */
+@media (hover: hover) and (pointer: fine) {
+  .scoreboard-section .scheduled-game:hover,
+  .scoreboard-section .live-game:hover,
+  .scoreboard-section .final-game:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.3);
+  }
+}
+
+.scoreboard-section .team {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.scoreboard-section .team img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.scoreboard-section .info h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  color: rgb(var(--gray-dark));
+}
+
+.scoreboard-section .info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgb(var(--gray));
+}
+
+.scoreboard-section .versus {
+  text-align: center;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.scoreboard-section .score {
+  margin-left: auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.scoreboard-section .poss {
+  color: var(--accent);
+  margin-left: 0.25rem;
+}
+
+.scoreboard-section .game-time,
+.scoreboard-section .game-clock {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+}
+
+.scoreboard-section .game-details,
+.scoreboard-section .stats {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgb(var(--gray-dark));
+  font-family: var(--font-mono);
+  text-align: center;
+}
+
+/* Team Stats Island 2-column layout */
+.team-stats-island {
+  font-size: 0.75rem; /* slightly larger text for readability */
+  line-height: 1.2;   /* tighter line spacing */
+}
+
+.team-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* left column 1 part, right column 2 parts */
+  gap: 1rem; /* spacing between columns */
+}
+
+.team-stats-grid .left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.team-stats-grid .right-column {
+  overflow-x: auto;
+  min-width: 0; /* ensures table respects column width and allows scrolling if needed */
+}
+
+/* Table styling */
+.team-stats-grid table {
+  width: 100%;
+  font-size: 0.75rem; /* match the new text size */
+  line-height: 1.2;
+  border-collapse: collapse;
+}
+
+.team-stats-grid th,
+.team-stats-grid td {
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+}
