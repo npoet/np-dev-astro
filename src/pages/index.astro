@@ -5,6 +5,11 @@ import Header from '../components/Header.astro';
 import { Image } from 'astro:assets';
 import HeroImage from '../assets/blog-placeholder-5.jpg';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+import ScoreboardIsland from '../islands/ScoreboardIsland.jsx';
+import TeamStatsIsland from '../islands/TeamStatsIsland.jsx';
+
+import "../styles/scoreboard.css";
 ---
 
 <!doctype html>
@@ -16,17 +21,29 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<Header />
 		<main>
 			<h1>Welcome</h1>
-			<div class="hero-image">
-				<Image width={1020} height={510} src={HeroImage} alt="" />
-			</div>
 			<p>
-				You have stumbled upon the portfolio site and personal blog of Nick Poet. 
+				You have stumbled upon the portfolio site and personal blog of Nick Poet.
 				Or you came here on purpose. Either way you should have something better to do.
+				Here are some suggestions:
 			</p>
+
+			<section>
+				<h3>Upcoming Games</h3>
+				<ScoreboardIsland client:load />
+			</section>
+
+			<section>
+              <h3>CFBData Statistical Reference</h3>
+              <TeamStatsIsland client:load defaultTeam="Michigan" />
+            </section>
+
+
 			<h5>
 				Site source:
 			</h5>
-			<a href="https://github.com/npoet/np-dev-astro" target="_blank">np-dev-astro</a>
+			<p>
+			    Astro is cool -- <a href="https://github.com/npoet/np-dev-astro" target="_blank">np-dev-astro</a>
+			</p>
 		</main>
 		<Footer />
 	</body>
