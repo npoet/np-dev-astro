@@ -11,6 +11,14 @@ import HeaderLink from './HeaderLink.astro';
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
     </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M21 12.79A9 9 0 0 1 11.21 3c0-.34 0-.67.05-1A10 10 0 1 0 22 13c-.33.05-.66.05-1 .05z"/>
+        </svg>
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="display: none;">
+          <path d="M12 4.354a1 1 0 0 1 1 1V7a1 1 0 1 1-2 0V5.354a1 1 0 0 1 1-1zm0 12.292a1 1 0 0 1 1 1V19a1 1 0 1 1-2 0v-1.354a1 1 0 0 1 1-1zM6.05 6.05a1 1 0 0 1 1.414 0l.957.957a1 1 0 1 1-1.414 1.414l-.957-.957a1 1 0 0 1 0-1.414zm9.9 9.9a1 1 0 0 1 1.414 0l.957.957a1 1 0 0 1-1.414 1.414l-.957-.957a1 1 0 0 1 0-1.414zM4.354 12a1 1 0 0 1 1-1H7a1 1 0 1 1 0 2H5.354a1 1 0 0 1-1-1zm12.292 0a1 1 0 0 1 1-1H19a1 1 0 1 1 0 2h-1.354a1 1 0 0 1-1-1zM6.05 17.95a1 1 0 0 1 0-1.414l.957-.957a1 1 0 0 1 1.414 1.414l-.957.957a1 1 0 0 1-1.414 0zm9.9-9.9a1 1 0 0 1 0-1.414l.957-.957a1 1 0 1 1 1.414 1.414l-.957.957a1 1 0 0 1-1.414 0z"/>
+        </svg>
+      </button>
     <div class="social-links">
 
       <div class="icon-wrapper">
@@ -34,6 +42,36 @@ import HeaderLink from './HeaderLink.astro';
     </div>
   </nav>
 </header>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.getElementById('theme-toggle');
+  const moon = document.getElementById('moon-icon');
+  const sun = document.getElementById('sun-icon');
+
+  // Load saved preference
+  if (localStorage.getItem('theme') === 'dark' ||
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    root.setAttribute('data-theme', 'dark');
+    moon.style.display = 'none';
+    sun.style.display = 'block';
+  }
+
+  toggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      root.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+      moon.style.display = 'block';
+      sun.style.display = 'none';
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      moon.style.display = 'none';
+      sun.style.display = 'block';
+    }
+  });
+</script>
 
 <style>
 header {
@@ -109,4 +147,18 @@ nav a:hover svg {
     display: none;
   }
 }
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1em;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
 </style>
