@@ -175,3 +175,33 @@
   padding: 0.25rem 0.5rem;
   text-align: center;
 }
+
+/* Responsive scoreboard grid */
+@media (max-width: 1024px) {
+  .scoreboard-section .scoreboard-grid {
+    grid-template-columns: repeat(2, 1fr); /* two columns on tablets */
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .scoreboard-section .scoreboard-grid {
+    grid-template-columns: 1fr; /* single column on phones */
+    gap: 0.75rem;
+  }
+
+  .scoreboard-section .scoreboard-grid .scheduled-game,
+  .scoreboard-section .scoreboard-grid .live-game,
+  .scoreboard-section .scoreboard-grid .final-game {
+    aspect-ratio: auto; /* let cards grow naturally */
+  }
+
+  .scoreboard-section .scoreboard-grid .team img {
+    width: 32px;
+    height: 32px; /* slightly smaller logos */
+  }
+
+  .scoreboard-section .scoreboard-grid .info h2 {
+    font-size: 1rem; /* scale down team names */
+  }
+}
