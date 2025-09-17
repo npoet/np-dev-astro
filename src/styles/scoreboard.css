@@ -1,8 +1,6 @@
-/* Scoped scoreboard styles
-   Based on original globals.css + page.module.css,
-   wrapped under .scoreboard-section so they only apply inside the island.
-*/
-
+/* ===========================
+   Scoreboard Section Styles
+   =========================== */
 .scoreboard-section {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -22,91 +20,102 @@
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
-  margin-bottom: 3rem; /* Add spacing below the island */
+
+  margin-bottom: 3rem; /* spacing below the island */
 }
 
-/* grid for game cards */
-.scoreboard-section .grid {
+/* ---------------------------
+   Scoreboard Grid
+   --------------------------- */
+.scoreboard-section .scoreboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   max-width: var(--max-width);
   margin: 2rem auto;
 }
 
-/* shared card styles */
-.scoreboard-section .scheduled-game,
-.scoreboard-section .live-game,
-.scoreboard-section .final-game {
-  padding: 1rem 1.2rem;
+/* ---------------------------
+   Scoreboard Cards
+   --------------------------- */
+.scoreboard-section .scoreboard-grid .scheduled-game,
+.scoreboard-section .scoreboard-grid .live-game,
+.scoreboard-section .scoreboard-grid .final-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 1 / 1; /* square-ish cards */
+  padding: 0.75rem 1rem; /* slightly reduced padding */
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0.05);
   border: 1px solid rgba(var(--card-border-rgb), 0.2);
   transition: background 200ms, border 200ms;
 }
 
-/* hover effect */
+/* Hover effect */
 @media (hover: hover) and (pointer: fine) {
-  .scoreboard-section .scheduled-game:hover,
-  .scoreboard-section .live-game:hover,
-  .scoreboard-section .final-game:hover {
+  .scoreboard-section .scoreboard-grid .scheduled-game:hover,
+  .scoreboard-section .scoreboard-grid .live-game:hover,
+  .scoreboard-section .scoreboard-grid .final-game:hover {
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.3);
   }
 }
 
-.scoreboard-section .team {
+/* Team inside card */
+.scoreboard-section .scoreboard-grid .team {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.scoreboard-section .team img {
+.scoreboard-section .scoreboard-grid .team img {
   width: 42px;
   height: 42px;
-  border-radius: 50%;
 }
 
-.scoreboard-section .info h2 {
+/* Info text */
+.scoreboard-section .scoreboard-grid .info h2 {
   font-size: 1.1rem;
   margin: 0;
   font-weight: 600;
   color: rgb(var(--gray-dark));
 }
 
-.scoreboard-section .info p {
+.scoreboard-section .scoreboard-grid .info p {
   margin: 0;
   font-size: 0.9rem;
   color: rgb(var(--gray));
 }
 
-.scoreboard-section .versus {
+/* Score / Versus / Time */
+.scoreboard-section .scoreboard-grid .versus {
   text-align: center;
   font-weight: bold;
   margin: 0.5rem 0;
 }
 
-.scoreboard-section .score {
+.scoreboard-section .scoreboard-grid .score {
   margin-left: auto;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-.scoreboard-section .poss {
+.scoreboard-section .scoreboard-grid .poss {
   color: var(--accent);
   margin-left: 0.25rem;
 }
 
-.scoreboard-section .game-time,
-.scoreboard-section .game-clock {
+.scoreboard-section .scoreboard-grid .game-time,
+.scoreboard-section .scoreboard-grid .game-clock {
   text-align: center;
   margin-top: 0.5rem;
   font-size: 0.9rem;
   font-family: var(--font-mono);
 }
 
-.scoreboard-section .game-details,
-.scoreboard-section .stats {
+.scoreboard-section .scoreboard-grid .game-details,
+.scoreboard-section .scoreboard-grid .stats {
   margin-top: 0.5rem;
   font-size: 0.85rem;
   color: rgb(var(--gray-dark));
@@ -114,10 +123,25 @@
   text-align: center;
 }
 
-/* Team Stats Island 2-column layout */
+/* ===========================
+   Team Stats Island (Updated)
+   =========================== */
 .team-stats-island {
   font-size: 0.75rem; /* slightly larger text for readability */
   line-height: 1.2;   /* tighter line spacing */
+  padding: 1rem; /* add inner spacing */
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0.05);
+  border: 1px solid rgba(var(--card-border-rgb), 0.2);
+  transition: background 200ms, border 200ms;
+}
+
+/* Optional hover effect to match scoreboard cards */
+@media (hover: hover) and (pointer: fine) {
+  .team-stats-island:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.3);
+  }
 }
 
 .team-stats-grid {
@@ -140,7 +164,7 @@
 /* Table styling */
 .team-stats-grid table {
   width: 100%;
-  font-size: 0.75rem; /* match the new text size */
+  font-size: 0.75rem;
   line-height: 1.2;
   border-collapse: collapse;
 }
