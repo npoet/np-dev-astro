@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const API_BASE = import.meta.env.FASTAPI_URL || "http://localhost:8001";
+const API_BASE = import.meta.env.FASTAPI_URL || "https://api.npoet.dev";
 
 const TeamStatsIsland = () => {
   const [teamName, setTeamName] = useState("");
