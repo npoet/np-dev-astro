@@ -184,7 +184,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .scoreboard-section .scoreboard-grid {
     grid-template-columns: 1fr; /* single column on phones */
     gap: 0.75rem;
