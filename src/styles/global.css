@@ -153,3 +153,55 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+/* ===========================
+   Dark Mode
+   =========================== */
+:root[data-theme="dark"] {
+  --accent: #7aa2f7;
+  --accent-dark: #3654ff;
+  --black: 255, 255, 255;
+  --gray: 160, 170, 190;
+  --gray-light: 60, 65, 80;
+  --gray-dark: 220, 220, 230;
+  --gray-gradient: rgba(var(--gray-light), 50%), #000;
+
+  --card-rgb: 40, 44, 52;
+  --card-border-rgb: 90, 90, 90;
+
+  background-color: rgb(15, 18, 25);
+  color: rgb(var(--gray-dark));
+}
+
+:root[data-theme="dark"] body {
+  background: linear-gradient(var(--gray-gradient)) no-repeat;
+  background-size: 100% 600px;
+  color: rgb(var(--gray-dark));
+}
+
+:root[data-theme="dark"] header {
+  background: rgb(30, 34, 42);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 50%);
+}
+
+:root[data-theme="dark"] nav a {
+  color: rgb(var(--gray-dark));
+}
+
+:root[data-theme="dark"] nav a:hover {
+  color: var(--accent);
+}
+
+:root[data-theme="dark"] .scoreboard-section .scoreboard-grid .info h2 {
+  color: rgb(240, 240, 245);
+}
+
+:root[data-theme="dark"] body {
+  background: linear-gradient(
+    to bottom,
+    rgb(20, 23, 30) 0%,
+    rgb(15, 18, 25) 100%
+  ) no-repeat;
+  background-size: cover;
+  color: rgb(var(--gray-dark));
+}
