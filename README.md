@@ -1,0 +1,1 @@
+You have stumbled upon the portfolio site and personal blog repo of Nick Poet. Or you came here on purpose. Either way you should have something better to do. Go check out the live site for some suggestions.
