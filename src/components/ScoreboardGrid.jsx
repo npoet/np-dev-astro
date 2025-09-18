@@ -66,14 +66,31 @@ export default function ScoreboardGrid() {
   }, []);
 
   function renderGame(game) {
-    if (game.inferredStatus === "live") {
-      return <Live key={game.id} data={game} />;
-    } else if (game.inferredStatus === "final") {
-      return <Final key={game.id} data={game} />;
-    } else {
-      return <Scheduled key={game.id} data={game} />;
-    }
+  const url = "https://scores.npoet.dev";
+
+  let content;
+  if (game.inferredStatus === "live") {
+    content = <Live key={game.id} data={game} />;
+  } else if (game.inferredStatus === "final") {
+    content = <Final key={game.id} data={game} />;
+  } else {
+    content = <Scheduled key={game.id} data={game} />;
   }
+
+  return (
+    <a
+      key={game.id}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="scoreboard-cell-link"
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      {content}
+    </a>
+  );
+}
+
 
   return (
     <div className="scoreboard-section">
