@@ -1,6 +1,6 @@
 ---
 title: 'Week 3 2025'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro. (lol)'
 pubDate: 'Sep 14 2025'
 heroImage: '../../assets/chomp.jpg'
 ---
