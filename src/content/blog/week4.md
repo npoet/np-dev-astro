@@ -18,11 +18,15 @@ Shockingly close hook and ladder alert
 
 One has to appreciate Ferentz's ability to turn literally any quarterback into Davis Warren. 
 
+##### Maryland - Wisconsin
+
+##### Clemson - Syracuse
+
+##### Texas Tech - Utah
+
 ##### Auburn - Oklahoma
 
 ##### Michigan - Nebraska
 
-##### Texas Tech - Utah
-
-##### Clemson - Syracuse
+##### Illinois - Indiana
 
