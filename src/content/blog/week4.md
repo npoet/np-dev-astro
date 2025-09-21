@@ -68,8 +68,10 @@ They put (117) apples in a cup up there. Bring back the PAC and its electric lac
 
 ##### ***Live Now - USC - Michigan State
 
+###### Update: Hope Wayne Matthews is okay and will play again soon.
+
 fuck the iliad bro all my homies hate the iliad. saw troy tho sick movie
 
-##### ***Live Soon - Fresno State - Hawai'i
+##### ***Live Now - Fresno State - Hawai'i
 
-Truly nothing like an 8:59pm PDT start. Hail Hawai'i
+Truly nothing like an 8:59pm PDT start. Maybe the latest-occurring safety of all time?
