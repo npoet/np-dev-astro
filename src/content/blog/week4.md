@@ -10,7 +10,9 @@ Before Matt Rhule says anything, Connor Stalions was with me at his mom's house 
 
 ## Week 4 CFB Review
 
-This one is going live before the late night games have even started on the West Coast. Expect periodic updates until USC is done rolling over John Smith. Personally I needed to get the initial thoughts out in order to not celebrate the *real* 1997 National Championship too hard.
+This one is going live before the late night games have even started on the West Coast. 
+Expect periodic updates until USC is done rolling over John Smith. Personally I needed to get the initial thoughts 
+out in order to not celebrate the *real* 1997 National Championship too hard.
 
 ##### Tulsa 19 - 12 Oklahoma State
 
@@ -18,7 +20,8 @@ Shockingly close hook and ladder alert
 
 ##### Iowa 38 - 28 Rutgers
 
-One has to appreciate Ferentz's ability to turn literally any quarterback into Davis Warren. Clearly this is not a shot at *hero and winner* Davis Warren so you figure it out.
+One has to appreciate Ferentz's ability to turn literally any quarterback into Davis Warren. Clearly this is not a 
+shot at *hero and winner* Davis Warren, so you figure it out.
 
 ##### Maryland 27 - 10 Wisconsin
 
@@ -52,7 +55,8 @@ Despair across the state today. Basking in it.
 
 ###### Update 7:58pm PDT: holy shit talk about a lot (63 - 10)
 
-Anyone that believed in Bielema should have their head examined immediately after his is studied for science. Indiana probably stole your signs.
+Anyone that believed in Bielema should have their head examined immediately after his is studied for science. 
+Indiana probably stole your signs.
 
 ##### Miami 26 - 7 Florida
 
