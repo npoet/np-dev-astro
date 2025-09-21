@@ -4,7 +4,6 @@ description: 'still under review. and we dont say "stands" anymore. we used to b
 pubDate: 'Sep 20 2025'
 updatedDate: 'Sep 21 2025'
 heroImage: '../../assets/matt_rulez.jpg'
-
 ---
 
 Before Matt Rhule says anything, Connor Stalions was with me at his mom's house the whole time.
@@ -45,7 +44,7 @@ Didn't you see this coming? The *&copy;Vast Network* did. Justice Haynes for He
 
 A walkoff win in Ypsi!
 
-##### Mizzou - South Carolina
+##### Mizzou 29 - 20 South Carolina
 
 Despair across the state today. Basking in it.
 
@@ -73,6 +72,9 @@ They put (117) apples in a cup up there. Bring back the PAC and its electric lac
 
 fuck the iliad bro all my homies hate the iliad. saw troy tho sick movie
 
-##### ***Live Now - Fresno State - Hawai'i
+##### Fresno State 23 - 21 Hawai'i
 
 Truly nothing like an 8:59pm PDT start. Maybe the latest-occurring safety of all time?
+
+
+###### Update 9/21 12:26 AM PDT: What a week. Wall-to-wall football. Great game to cap it off.
