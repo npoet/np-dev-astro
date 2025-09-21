@@ -44,6 +44,32 @@ Didn't you see this coming? The *&copy;Vast Network* did. Justice Haynes for He
 
 A walkoff win in Ypsi!
 
+##### Mizzou - South Carolina
+
+Despair across the state today. Basking in it.
+
 ##### Indiana (a lot) - (a little) Illinois (it is the 2nd quarter at the time of writing)
 
+###### Update 7:58pm PDT: holy shit talk about a lot (63 - 10)
+
 Anyone that believed in Bielema should have their head examined immediately after his is studied for science. Indiana probably stole your signs.
+
+##### Miami 26 - 7 Florida
+
+I spoke too soon with the Fickell thing. You really have to feel for the Florida defense (I don't but you have to).
+
+##### Arizona State 27 - 24 Baylor
+
+We all scored with this game. A real-life ASU experience. Baylor flock avert your eyes
+
+##### Washington 59 - 24 Washington State
+
+They put (117) apples in a cup up there. Bring back the PAC and its electric lack of defense.
+
+##### ***Live Now - USC - Michigan State
+
+fuck the iliad bro all my homies hate the iliad. saw troy tho sick movie
+
+##### ***Live Soon - Fresno State - Hawai'i
+
+Truly nothing like an 8:59pm PDT start. Hail Hawai'i
