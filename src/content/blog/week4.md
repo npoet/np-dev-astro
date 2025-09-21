@@ -2,6 +2,7 @@
 title: 'Week 4 2025'
 description: 'still under review. and we dont say "stands" anymore. we used to be a proper country.'
 pubDate: 'Sep 20 2025'
+updatedDate: 'Sep 21 2025'
 heroImage: '../../assets/matt_rulez.jpg'
 
 ---
@@ -66,7 +67,7 @@ We all scored with this game. A real-life ASU experience. Baylor flock avert you
 
 They put (117) apples in a cup up there. Bring back the PAC and its electric lack of defense.
 
-##### ***Live Now - USC - Michigan State
+##### USC 45 - 31 Michigan State
 
 ###### Update: Hope Wayne Matthews is okay and will play again soon.
 
