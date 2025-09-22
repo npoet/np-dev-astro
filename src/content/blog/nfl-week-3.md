@@ -9,7 +9,7 @@ People have been asking, why no thoughts on the NFL?
 
 ###### Update: Mike Vrabel *you* just lost at home to the Pittsburgh Steelers. *What are you gonna do now?*
 
-
+See below for thoughts:
 
 ## Weeks 1-3 NFL Review
 
