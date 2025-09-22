@@ -55,6 +55,8 @@ Despair across the state today. Basking in it.
 
 ##### Indiana (a lot) - (a little) Illinois (it is the 2nd quarter at the time of writing)
 
+![keep scoring or else](../../assets/no-filter.png)
+
 ###### Update 7:58pm PDT: holy shit talk about a lot (63 - 10)
 
 Anyone that believed in Bielema should have their head examined immediately after his is studied for science. 
