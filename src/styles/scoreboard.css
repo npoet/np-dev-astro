@@ -132,7 +132,7 @@
    Team Stats Island (Updated)
    =========================== */
 .team-stats-island {
-  font-size: 0.75rem; /* slightly larger text for readability */
+  font-size: 0.8rem; /* slightly larger text for readability */
   line-height: 1.2;   /* tighter line spacing */
   padding: 1rem; /* add inner spacing */
   border-radius: var(--border-radius);
