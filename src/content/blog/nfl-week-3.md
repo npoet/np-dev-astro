@@ -38,8 +38,6 @@ for nearly $0 (to watch Dan Campbell!). Of this finally being the year Matt Staf
 Of that time our head coach almost fought Jim Harbaugh. Not so much the early retiring two of the greatest skill players 
 to ever grace the field at their respective positions.
 
-![sol](/src/assets/pain.jpg)
-
 Times have changed. The Lions renaissance of the 2020s has been both beautiful and terrifying. Only the Lions could rip 
 the heart out of the city of Detroit like they did last season. And the 60 seasons prior. And we're all happily giving 
 them the opportunity to do it all over again. Expectations for the Lions feel seriously foreign and almost as exciting 
