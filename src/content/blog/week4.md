@@ -41,6 +41,8 @@ Definitely picked this one on Friday and can't be bothered to use the delete key
 
 ##### Michigan 30 -  27 Nebraska
 
+![it wasn't that close](/src/assets/agreed.webp)
+
 Didn't you see this coming? The *&copy;Vast Network* did. Justice Haynes for Heisman (and open tryouts ASAP for WR). 
 
 ##### Eastern Michigan 34 - 31 UL Lafayette
