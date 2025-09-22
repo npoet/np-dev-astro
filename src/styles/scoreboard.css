@@ -44,8 +44,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  aspect-ratio: 1 / 1; /* square-ish cards */
-  padding: 0.75rem 1rem; /* slightly reduced padding */
+  aspect-ratio: 1 / 1;
+  padding: 0.75rem 1rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0.05);
   border: 1px solid rgba(var(--card-border-rgb), 0.2);
@@ -128,13 +128,13 @@
   text-align: center;
 }
 
-/* ===========================
-   Team Stats Island (Updated)
-   =========================== */
+/* =================
+   Team Stats Island
+   ================= */
 .team-stats-island {
-  font-size: 0.8rem; /* slightly larger text for readability */
-  line-height: 1.2;   /* tighter line spacing */
-  padding: 1rem; /* add inner spacing */
+  font-size: 0.9rem;
+  line-height: 1.2;
+  padding: 1rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0.05);
   border: 1px solid rgba(var(--card-border-rgb), 0.2);
@@ -142,7 +142,6 @@
   font-family: var(--font-mono);
 }
 
-/* Optional hover effect to match scoreboard cards */
 @media (hover: hover) and (pointer: fine) {
   .team-stats-island:hover {
     background: rgba(var(--card-rgb), 0.1);
@@ -152,8 +151,8 @@
 
 .team-stats-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* left column 1 part, right column 2 parts */
-  gap: 1rem; /* spacing between columns */
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
 }
 
 .team-stats-grid .left-column {
@@ -164,10 +163,9 @@
 
 .team-stats-grid .right-column {
   overflow-x: auto;
-  min-width: 0; /* ensures table respects column width and allows scrolling if needed */
+  min-width: 0;
 }
 
-/* Table styling */
 .team-stats-grid table {
   width: 100%;
   font-size: 0.75rem;
@@ -182,32 +180,31 @@
   text-align: center;
 }
 
-/* Responsive scoreboard grid */
 @media (max-width: 640px) {
   .scoreboard-section .scoreboard-grid {
-    grid-template-columns: repeat(2, 1fr); /* two columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 }
 
 @media (max-width: 380px) {
   .scoreboard-section .scoreboard-grid {
-    grid-template-columns: 1fr; /* single column on phones */
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
   .scoreboard-section .scoreboard-grid .scheduled-game,
   .scoreboard-section .scoreboard-grid .live-game,
   .scoreboard-section .scoreboard-grid .final-game {
-    aspect-ratio: auto; /* let cards grow naturally */
+    aspect-ratio: auto;
   }
 
   .scoreboard-section .scoreboard-grid .team img {
     width: 32px;
-    height: 32px; /* slightly smaller logos */
+    height: 32px;
   }
 
   .scoreboard-section .scoreboard-grid .info h2 {
-    font-size: 1rem; /* scale down team names */
+    font-size: 1rem;
   }
 }

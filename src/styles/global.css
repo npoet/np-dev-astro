@@ -1,5 +1,5 @@
 /*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
+  Some of the CSS in this stylesheet is based off of:
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
@@ -150,7 +150,6 @@ hr {
 	clip: rect(1px, 1px, 1px, 1px);
 	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
 
