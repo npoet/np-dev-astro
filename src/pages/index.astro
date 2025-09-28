@@ -8,6 +8,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 import ScoreboardIsland from '../islands/ScoreboardIsland.jsx';
 import TeamStatsIsland from '../islands/TeamStatsIsland.jsx';
+import EquipValueIsland from '../islands/EquipValueIsland.jsx'
 
 import "../styles/scoreboard.css";
 ---
@@ -37,6 +38,19 @@ import "../styles/scoreboard.css";
               <TeamStatsIsland client:load defaultTeam="Michigan" />
             </section>
 
+            <section>
+              <h3>
+                <a
+                  href="https://github.com/npoet/an-osrs-project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="text-decoration: none; color: inherit;"
+                >
+                  OSRS Equip Value
+                </a>
+              </h3>
+              <EquipValueIsland client:load />
+            </section>
 
 			<h5>
 				Site source:
