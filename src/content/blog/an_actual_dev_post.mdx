@@ -1,7 +1,102 @@
 ---
 title: 'The code behind this site'
-description: 'Hey this isn\'t about college football!'
-pubDate: 'Oct 02 2025'
+description: 'Hey this isnt about college football!'
+pubDate: 'Oct 01 2025'
 heroImage: '../../assets/vast.jpg'
 ---
 
+import ScoreboardIsland from '../../islands/ScoreboardIsland.jsx';
+import EquipValueIsland from '../../islands/EquipValueIsland.jsx';
+import "../../styles/scoreboard.css";
+
+### Background
+
+Before this site and its scores domain were live, getting a bunch of sports results or live
+scores on one page (without a wall of ads) was getting more difficult than it should be. My primary
+interests here being american football and EPL soccer, I went searching for a better source of data.
+
+It turns out, a certain Disney-owned sports giant uses a simple, open API to feed their
+increasingly bloated set of webpages and betting apps. There is a popular GitHub repo
+dedicated to documenting this "hidden" API, and was a great starting point for the
+CFBScores project. Since the 2021-2022 football season I've been building and using
+CFBScores as a local tool to watch (and occasionally bet on) as many games as possible.
+
+### CFBScores
+
+The scores [island](https://docs.astro.build/en/concepts/islands/) on this site is a simple "windowed"
+version of what can be found on scores.npoet.dev. MDX files like the one this page is rendered
+from allow us to imbed client-side islands the same way:
+
+<ScoreboardIsland client:load />
+
+I've gone through several style iterations and finally like the look of most things on the scores
+site, but it was designed with my monitors/devices in mind and definitely doesn't scale
+perfectly yet.
+
+#### Future Updates
+
+In addition to minor style tweaks to better support every screen that the site might be
+viewed on, there are some performance and cost improvements that are planned for the
+future. I am currently only making significant use of server-side caching in the team stats
+component (seen on the front page of this site for example), and could significantly reduce
+calls to the "hidden API" by caching game data as well. In the time between live games that
+often occurs from Sunday/Monday night to Thursday, rarely any data will change outside of
+betting lines. Betting lines being the only relevant data changing in downtime, we can
+safely cache the scores data and refresh the cache every couple of hours when games aren't live.
+
+Beyond efficiency improvements I plan to better integrate the CFBData API in the very near future.
+There is a wealth of information available for statistical analysis and I will be creating
+some new visualizations and a comparison tool to expand the team data resource. Previously
+I would use the links on the scores site to do additional betting research elsewhere, but
+the incorporation of more CFBData features could easily eclipse my current 3rd party sources.
+
+### an-osrs-project
+
+This silly project was the idea of a fellow XP-waster at the W420 G.E. If you don't know
+what any of this means, good for you. Feel free to stop reading at any time you see fit.
+
+It is obviously essential to get a good *fashionscape* on to flex on noobs after printing gp
+at the delve boss all day. To get a better idea of how my pixelated investments are
+performing, I built this simple tool you may have seen on the index page:
+
+<EquipValueIsland client:load />
+
+The RuneScape Wikis are an excellent community resource, and they are very generous with their API
+policies. However, if we somehow blow things up and hear from them on Discord, I'll likely implement
+more caching here too. I don't necessarily need the sheer number of data points represented
+in the graph, nor the update frequency, but they allow it and it works quickly with the current
+async implementation.
+
+While the gif file in the GitHub README is likely not up to date at any given time, it is a
+decent representation of the type of swag we're working with here. This account stays spooned.
+
+#### Future Updates
+
+Constant thoughts of caching aside, it would be nice to have more merching features within this
+tool. I like the graph library provided by [recharts](https://recharts.org/en-US), and would be using
+effectively the same "real-time" data available on the prices wiki. I don't really have an immediate
+need for it, but expect some new features here sometime soon as well.
+
+### npoet.dev infrastructure
+
+The site infrastructure is fairly simple, but I wanted to outline my design choices and plans for my cloud
+resources as well. Currently my API and domain frontends are hosted in EC2 ARM instances. I'm using a fairly
+standard proxy and ingress but that's as detailed as we'll get here. Not like you're getting past Cloudflare
+but you can't be too careful.
+
+Costs and CPU overhead are kept nice and low in this configuration, but my resources are not replicated
+and are currently solely located in one of the us-west clusters. Latency from the east coast doesnt seem
+to be a problem as of now (according to a friend), but an ELB and replicated EKS setup would be a sensible future
+plan if the scores site specifically is ever in need of some scale. That would be a good problem to have, and
+though these are not currently running in Docker containers that's only a click or so away.
+
+#### Future Updates
+
+In a scenario where the site requires elastic resources at a greater scale, I'll want to relocate the
+cache and databasing off-instance and into (likely) DocumentDB and/or ElastiCache hosted thru AWS.
+
+As this and the scores site are updated in the future, I may create a new version of this document. I don't
+have any current plans for new widgets on this site necessarily, but I'm sure something will come to me
+eventually.
+
+###### Happy Official Start of Spooky Season
