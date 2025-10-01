@@ -11,15 +11,20 @@ import "../../styles/scoreboard.css";
 
 ### Background
 
-Before this site and its scores domain were live, getting a bunch of sports results or live
-scores on one page (without a wall of ads) was getting more difficult than it should be. My primary
-interests here being american football and EPL soccer, I went searching for a better source of data.
+Before this site and its [scores](https://scores.npoet.dev/) domain were active, getting a bunch of results
+or live scores on one page for free (without a wall of ads) was getting more difficult than it should be.
+My primary affected interests being American football and EPL soccer, I went searching for a better source of data.
+
+There are plenty of paid sources out there, ranging from very reasonable pricing like our friends at
+[CFBData](https://collegefootballdata.com/), to enterprise-focused pricing models that quickly spiralled
+out of my range. I was unable to find any single source that covered all of my needs for a reasonable price,
+unfortunately.
 
 It turns out, a certain Disney-owned sports giant uses a simple, open API to feed their
 increasingly bloated set of webpages and betting apps. There is a popular GitHub repo
-dedicated to documenting this "hidden" API, and was a great starting point for the
-CFBScores project. Since the 2021-2022 football season I've been building and using
-CFBScores as a local tool to watch (and occasionally bet on) as many games as possible.
+dedicated to documenting this "hidden" API, and it was a great starting point for the FBScores
+project. Since the 2021-2022 football season I've been building and using FBScores as a local
+tool to watch (and occasionally bet on) as many games as possible.
 
 ### CFBScores
 
@@ -31,7 +36,9 @@ from allow us to imbed client-side islands the same way:
 
 I've gone through several style iterations and finally like the look of most things on the scores
 site, but it was designed with my monitors/devices in mind and definitely doesn't scale
-perfectly yet.
+perfectly yet. At a minimum, I can quickly find out what games are on and where to find them.
+The cells on this site link to the scores page, but their counterparts there expand on-click to
+show statistics, box scores, and live information when available.
 
 #### Future Updates
 
@@ -42,13 +49,18 @@ component (seen on the front page of this site for example), and could significa
 calls to the "hidden API" by caching game data as well. In the time between live games that
 often occurs from Sunday/Monday night to Thursday, rarely any data will change outside of
 betting lines. Betting lines being the only relevant data changing in downtime, we can
-safely cache the scores data and refresh the cache every couple of hours when games aren't live.
+safely cache the scores data and only refresh the cache every couple of hours when games aren't live.
 
 Beyond efficiency improvements I plan to better integrate the CFBData API in the very near future.
 There is a wealth of information available for statistical analysis and I will be creating
 some new visualizations and a comparison tool to expand the team data resource. Previously
 I would use the links on the scores site to do additional betting research elsewhere, but
 the incorporation of more CFBData features could easily eclipse my current 3rd party sources.
+
+The [code](https://github.com/npoet/cfbscores_py) (and [code](https://github.com/npoet/cfbscores_react))
+itself could still use plenty of cleanup, but the API especially is in a decent state. I will continue
+to make small improvements on both ends, with more async support for latency improvements coming
+in the next week or so.
 
 ### an-osrs-project
 
@@ -76,6 +88,10 @@ Constant thoughts of caching aside, it would be nice to have more merching featu
 tool. I like the graph library provided by [recharts](https://recharts.org/en-US), and would be using
 effectively the same "real-time" data available on the prices wiki. I don't really have an immediate
 need for it, but expect some new features here sometime soon as well.
+
+If we could somehow get a live integration with a RuneLite plugin going instead of a JSON-based
+setup, that would be the ideal situation for this tool. I'm sure this is possible, but I've never
+attempted anything similar and don't necessarily have it high on my current TODO list.
 
 ### npoet.dev infrastructure
 
