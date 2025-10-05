@@ -9,7 +9,7 @@ Considered not changing the image this week. Frames Janklin just lost to some ra
 
 ## Week 6 CFB Review
 
-Fire Luke Fickell.
+Fire Luke Fickell. Wisconsin fans deserve better than a man that doesn't call timeouts.
 
 ##### Western Kentucky 27 - 24 Delaware
 
@@ -77,9 +77,13 @@ Davis retains the Golden Horseshoe
 
 FCS thriller alert, big win for the Grizz.
 
+##### Fresno State 20 - 17 Nevada
+
+Just close enough to keep on screen. Helps that it was one of 2 west coast night games this week.
+
 ##### Duke scored more points than Cal.
 
-Dont let the (lack of) a score fool you. Whats really important is going on in the classroom.
+Dont let the (lack of) a score fool you. Whats really important is going on in the classroom. Do your homework kids, maybe one day you can play football for Cal (and/) or Duke in front of literally hundreds of fans.
 
 
 
