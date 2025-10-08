@@ -12,6 +12,7 @@ const Scheduled = ({ data }) => {
     away_record,
     time,
     tv,
+    odds,
   } = data;
 
   return (
@@ -37,7 +38,7 @@ const Scheduled = ({ data }) => {
       </div>
       <div className="game-time">
         <p>{time}</p>
-        <p>{tv}</p>
+        <p>{tv} | {odds.split("|")[1]?.trim()}</p>
       </div>
     </div>
   );
