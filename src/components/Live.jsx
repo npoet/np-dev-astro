@@ -49,7 +49,7 @@ const Live = ({ data, onHomeLogoClick, onAwayLogoClick }) => {
             </div>
             <div className="game-details">
                 {ball_on ? (<p>Ball on {ball_on}</p>) : null}
-                <p>TV: {tv}</p>
+                <p>{tv}</p>
             </div>
         </div>
     );
