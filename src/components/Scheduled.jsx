@@ -37,7 +37,7 @@ const Scheduled = ({ data }) => {
       </div>
       <div className="game-time">
         <p>{time}</p>
-        <p>TV: {tv}</p>
+        <p>{tv}</p>
       </div>
     </div>
   );
