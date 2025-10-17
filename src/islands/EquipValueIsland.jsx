@@ -105,8 +105,8 @@ const EquipValueIsland = () => {
                     />
                     <YAxis
                       domain={[
-                        Math.min(...timeseries.map((d) => d.avgHighPrice)) * 0.95, // 5% below min
-                        Math.max(...timeseries.map((d) => d.avgHighPrice)) * 1.05, // 5% above max
+                        Math.min(...timeseries.map((d) => d.avgHighPrice)) * 0.98, // 2% below min
+                        Math.max(...timeseries.map((d) => d.avgHighPrice)) * 1.02, // 2% above max
                       ]} hide
                     />
                     <Tooltip
