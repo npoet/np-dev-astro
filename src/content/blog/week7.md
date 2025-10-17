@@ -71,7 +71,11 @@ Week 8 started Tuesday, beginning our month-long football slate for the season. 
 
  ##### Louisville @ Miami (Fri 8/17)
 
+We will find out Friday night if Miami is legit. This is a classic ACC letdown spot. But is it 2018 Miami or 2000 Miami? Time will tell.
+
 ##### Nebraska @ Minnesota (Fri 8/15)
+
+B1G Friday night is for real teams only. Real bad home teams.
 
 ##### LSU @ Vandy
 
