@@ -21,7 +21,7 @@ I warned you all about this.
 
 Nebraska should really take a look at this row the boat guy, he's doing a great job in the Twin Cities
 
-##### Vandy 31- 24 LSU
+##### Vandy 31 - 24 LSU
 
 The fighting Diego Pavia's get possibly their biggest ever home win and best start since 1950. Is the stadium done yet?
 
