@@ -1,22 +1,27 @@
 ---
 import AboutHeroImage from '../assets/blog-placeholder-2.jpg';
 import Layout from '../layouts/BlogPost.astro';
+import {SITE_TITLE} from '../consts';
 ---
 
 <Layout
-	title="Nicholas J. Poet"
+	title={SITE_TITLE + " | CV"}
 	description="CV Nicholas Poet"
 	pubDate={new Date('August 1 2025')}
 	updatedDate={new Date('September 21 2025')}
 >
-	<h4>
-		Professional Summary:
-	</h4>
-	<p>
+    <h3>
+        Nicholas J. Poet
+    </h3>
+    <p>
+        Software and Data Engineer
+    </p>
+	<h5>
 		An effective team lead and experienced engineer with over 10 years in software.
 		Leadership experience in Agile, full-stack development from microservices and APIs to databasing and security.
 		Additional fields of interest/expertise include data science, blockchain technology, and sports statistics.
-	</p>
+	</h5>
+	<p></p>
 	<h4>
 		Technical Skills:
 	</h4>
@@ -44,7 +49,8 @@ import Layout from '../layouts/BlogPost.astro';
 	</p>
 	<h4>
 		Professional Experience:
-	</h4><p></p>
+	</h4>
+	<p></p>
 	<h5>
 		Software Engineer; stoneweavr.
 	</h5>
@@ -214,6 +220,82 @@ import Layout from '../layouts/BlogPost.astro';
 	</li>
 	<li>
 	    Implemented agile methodologies for software development.
+	</li>
+	<p></p>
+	<h4>
+		Personal Projects:
+	</h4>
+	<p></p>
+	<h5>
+	    <a
+          href="https://github.com/npoet/cfbscores_py"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;"
+        >
+	    FBScores
+	    </a>
+	</h5>
+	<li>
+	    Simple FastAPI service that returns aggregations of live and scheduled sports data for cfbscores_react.
+	    Links live games to FuboTV and other online providers for easy multi-boxing.
+	</li>
+	<p></p>
+    <h5>
+	    <a
+          href="https://github.com/npoet/cfbscores_react"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;"
+        >
+	    scores.npoet.dev
+	    </a>
+	</h5>
+	<li>
+	    A basic scoreboard app + team statistical reference for College Football and more.
+	    Links live games to FuboTV and other online providers for easy multi-boxing. Powered by cfbscores_py
+	</li>
+	<p></p>
+	<h5>
+	    <a
+          href="https://github.com/npoet/crypto-api-py"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;"
+        >
+	    crypto-api-py
+	    </a>
+	</h5>
+	<li>
+	    Python 3.x implementations of API clients for popular crypto exchanges.
+	</li>
+	<p></p>
+	<h5>
+	    <a
+          href="https://github.com/npoet/go-crypto-api"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;"
+        >
+	    go-crypto-api
+	    </a>
+	</h5>
+	<li>
+	    API connection libraries for Gemini and HitBTC in GoLang.
+	</li>
+	<p></p>
+	<h5>
+	    <a
+          href="https://github.com/npoet/np-dev-astro"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;"
+        >
+	    This site!
+	    </a>
+	</h5>
+	<li>
+	    self explanatory
 	</li>
 	<p></p>
 	<h4>
