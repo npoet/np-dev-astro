@@ -73,11 +73,9 @@ Trophy ownership alert: Paul stays home after a brief drive up to mid-Michigan. 
 
 ![again](../../assets/paul.jpg)
 
-Pretty sure the last John Smith at MSU got fired under these exact circumstances, so maybe they should've seen this coming. Someone check the 2006 wikipedia page for me
-
 ###### Update: I checked, and he did (31-13 loss, nearly identical). Not great.
 
-
+Pretty sure the last John Smith at MSU got fired under these exact circumstances, so maybe they should've seen this coming. Someone check the 2006 wikipedia page for me
 
 ##### Tennessee 56 - 34 Kentucky
 
