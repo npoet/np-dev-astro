@@ -6,7 +6,8 @@ import { Image } from 'astro:assets';
 import HeroImage from '../assets/blog-placeholder-5.jpg';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-import ScoreboardIsland from '../islands/ScoreboardIsland.jsx';
+import ScoreboardIslandFootball from '../islands/ScoreboardIslandFootball.jsx';
+import ScoreboardIslandHoops from '../islands/ScoreboardIslandHoops.jsx';
 import TeamStatsIsland from '../islands/TeamStatsIsland.jsx';
 import EquipValueIsland from '../islands/EquipValueIsland.jsx'
 
@@ -36,10 +37,24 @@ import "../styles/scoreboard.css";
                   rel="noopener noreferrer"
                   style="text-decoration: none; color: inherit;"
                 >
-                  Upcoming Games
+                  Upcoming Football
                 </a>
               </h3>
-				<ScoreboardIsland client:load />
+				<ScoreboardIslandFootball client:load />
+			</section>
+
+			<section>
+				<h3>
+                <a
+                  href="https://github.com/npoet/cbbscores"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="text-decoration: none; color: inherit;"
+                >
+                  Upcoming Basketball
+                </a>
+              </h3>
+				<ScoreboardIslandHoops client:load />
 			</section>
 
 			<section>
