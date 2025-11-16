@@ -11,7 +11,7 @@ That title was handed [to a team in Michigan](https://www.espn.com/college-footb
 
 The hammer finally came! Pretty sure I mentioned something about ineligible players [a couple weeks ago...](https://npoet.dev/blog/week7/)
 
-![](/home/npoet/AstroProjects/np-dev-astro/src/assets/call-an-ambulance-but-not-for-me-but-not-for-me.gif)
+![](../../assets/call-an-ambulance-but-not-for-me-but-not-for-me.gif)
 
 There were also games this past weekend. See Below.
 
