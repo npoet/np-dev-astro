@@ -61,7 +61,7 @@ Whatever gets you going I guess.
 
 ##### LSU 23 - 22 Arkansas
 
-
+Arkansas only plays painful games. Unlike Michigan they seem to lose them all at the moment.
 
 ##### Arizona State 25 - 23 West Virginia
 
