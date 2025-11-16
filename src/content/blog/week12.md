@@ -1,7 +1,7 @@
 ---
 title: 'Week 12 2025'
 description: 'take me out at the ball game'
-pubDate: 'Nov 16 2025'
+pubDate: 'Nov 15 2025'
 heroImage: '../../assets/zvaaaaada.jpg'
 ---
 
