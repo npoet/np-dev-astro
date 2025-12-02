@@ -87,4 +87,3 @@ Do they do that trophy thing every year??
 ##### LSU 13 - 10 Western Kentucky
 
 Not what you're looking for when you schedule WKU, nor when you want to hire Lane Kiffin.
-
