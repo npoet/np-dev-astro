@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://npoet.dev',
+  base: '/np-dev-astro',
   output: 'static',
   integrations: [
     mdx(),
