@@ -6,8 +6,7 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://npoet.github.io',
-  base: '/np-dev-astro',
+  site: 'https://npoet.dev',
   output: 'static',
   integrations: [
     mdx(),
