@@ -1,25 +1,13 @@
 {
-  "name": "nordlys",
+  "name": "npoet.dev",
   "type": "module",
-  "version": "3.9.1",
-  "description": "A minimal Astro blog theme",
-  "author": "FjellOverflow",
-  "license": "GPL-3.0-only",
-  "homepage": "https://github.com/FjellOverflow/nordlys",
+  "version": "1.0.1",
+  "description": "Personal portfolio site based on @FjellOverflow/nordlys",
+  "author": "npoet",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FjellOverflow/nordlys.git"
+    "url": "https://github.com/npoet/npoet-dev-astro.git"
   },
-  "bugs": {
-    "url": "https://github.com/FjellOverflow/nordlys/issues"
-  },
-  "keywords": [
-    "astro",
-    "blog",
-    "template",
-    "theme",
-    "tailwindcss"
-  ],
   "scripts": {
     "dev": "astro dev",
     "lint": "eslint . && stylelint src",
