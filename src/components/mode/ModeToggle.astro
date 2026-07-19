@@ -1,0 +1,91 @@
+<dark-light-toggle>
+  <button title="Toggle dark & light mode" class="flex items-center">
+    <span
+      aria-hidden="true"
+      class="clickable iconify tabler--moon dark:tabler--sun"></span>
+  </button>
+</dark-light-toggle>
+
+<script>
+  class DarkLightToggle extends HTMLElement {
+    connectedCallback() {
+      const button = this.querySelector('button')
+
+      if (!button) return
+
+      button.setAttribute('aria-label', window.mode.getMode())
+
+      const handleToggle = (event: MouseEvent) => {
+        const newMode = window.mode.getMode() === 'light' ? 'dark' : 'light'
+
+        const switchMode = () => {
+          window.mode.setMode(newMode)
+          button.setAttribute('aria-label', newMode)
+        }
+
+        if (!document.startViewTransition) {
+          switchMode()
+          return
+        }
+
+        const x = event.clientX
+        const y = event.clientY
+        const endRadius = Math.hypot(
+          Math.max(x, window.innerWidth - x),
+          Math.max(y, window.innerHeight - y)
+        )
+
+        document.documentElement.classList.add('theme-switching')
+
+        const transition = document.startViewTransition(() => {
+          switchMode()
+        })
+
+        transition.finished.finally(() => {
+          document.documentElement.classList.remove('theme-switching')
+        })
+
+        transition.ready.then(() => {
+          const duration = 600
+          document.documentElement.animate(
+            {
+              clipPath: [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${endRadius}px at ${x}px ${y}px)`
+              ]
+            },
+            {
+              duration: duration,
+              easing: 'cubic-bezier(.76,.32,.29,.99)',
+              pseudoElement: '::view-transition-new(root)'
+            }
+          )
+        })
+      }
+
+      button.addEventListener('click', handleToggle)
+    }
+  }
+
+  if (!customElements.get('dark-light-toggle'))
+    customElements.define('dark-light-toggle', DarkLightToggle)
+</script>
+
+<style is:global>
+  html.theme-switching [data-astro-transition-scope] {
+    view-transition-name: none !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-new(root) {
+    z-index: 9999;
+  }
+  ::view-transition-old(root) {
+    z-index: 1;
+  }
+</style>

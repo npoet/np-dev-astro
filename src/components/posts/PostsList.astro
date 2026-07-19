@@ -1,0 +1,22 @@
+---
+import Separator from '@/components/layout/Separator.astro'
+import type { CollectionEntry } from 'astro:content'
+import PostsListItem from './PostsListItem.astro'
+
+export interface Props {
+  posts: CollectionEntry<'posts'>[]
+}
+
+const { posts } = Astro.props
+---
+
+<ul class="list-none p-0">
+  {
+    posts.map((post, index) => (
+      <li class="pl-0">
+        <PostsListItem {post} />
+        {index !== posts.length - 1 && <Separator class="mt-6 mb-6" />}
+      </li>
+    ))
+  }
+</ul>

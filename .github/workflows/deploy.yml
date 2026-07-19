@@ -3,7 +3,7 @@ name: Deploy Astro to GitHub Pages
 on:
   push:
     branches:
-      - production
+      - feature/nordlys
 
 permissions:
   contents: read

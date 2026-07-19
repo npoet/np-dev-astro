@@ -1,0 +1,86 @@
+---
+import Hero, { type Props as HeroProps } from '@/components/Hero.astro'
+import FooterItem from '@/components/layout/FooterItem.astro'
+import Separator from '@/components/layout/Separator.astro'
+import ModeToggle from '@/components/mode/ModeToggle.astro'
+import BaseLayout, {
+  type Props as BaseLayoutProps
+} from '@/layouts/BaseLayout.astro'
+import config from '@/theme.config'
+import { getPosts } from '@/util/posts'
+
+export type Props = BaseLayoutProps &
+  HeroProps & {
+    frontmatter: { showLatestPost?: boolean }
+  }
+
+const { frontmatter } = Astro.props
+
+const latestPost = (await getPosts())[0]
+---
+
+<BaseLayout frontmatter={frontmatter}>
+  <div
+    class="mx-auto flex min-h-svh w-full max-w-[90%] flex-col justify-between md:max-w-3xl"
+  >
+    <div class="mt-16 px-4 sm:mt-36 sm:px-12">
+      <main id="main">
+        {frontmatter.title && <Hero {frontmatter}>{frontmatter.title}</Hero>}
+        <div
+          id="animated-links"
+          class="text-3xl font-semibold tracking-tight text-gray-700/50 sm:text-4xl sm:leading-[46px] dark:text-gray-300/50"
+        >
+          <slot />
+          {
+            latestPost && frontmatter.showLatestPost && (
+              <div class="mt-8">
+                <span class="text-2xl sm:text-3xl">
+                  Read my latest post{' '}
+                  <a href={`/posts/${latestPost.id}/`}>
+                    {latestPost.data.title}
+                  </a>
+                </span>
+              </div>
+            )
+          }
+        </div>
+      </main>
+      <footer class="mt-8">
+        <Separator />
+        <div
+          class="flex justify-between gap-2 py-4 text-3xl sm:py-8 sm:text-5xl"
+        >
+          {config.footerItems.map((item) => <FooterItem {item} />)}
+
+          <div class="grow"></div>
+
+          {config.modeToggle && <ModeToggle />}
+        </div>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>
+<style is:global>
+  :root {
+    overflow-y: auto !important;
+  }
+
+  #animated-links {
+    a {
+      color: rgb(var(--accent));
+
+      background-image: linear-gradient(
+        transparent calc(85% - 5px),
+        rgba(var(--accent), 0.35) 5px
+      );
+      background-size: 0;
+      background-repeat: no-repeat;
+      display: inline;
+      transition: background-size 0.5s cubic-bezier(0.65, -0.05, 0.25, 1);
+
+      &:hover {
+        background-size: 100%;
+      }
+    }
+  }
+</style>

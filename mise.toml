@@ -1,0 +1,38 @@
+[settings]
+all_compile = false
+
+[tools]
+node = "24.18.0"
+pnpm = "11.13.0"
+
+[tasks.setup]
+run = "pnpm i --frozen-lockfile"
+
+[tasks.dev]
+depends = ["setup"]
+run = "pnpm dev --host"
+
+[tasks.build]
+depends = ["setup"]
+run = "pnpm build"
+
+[tasks.ci]
+depends = ["setup"]
+run = ["pnpm lint", "pnpm check"]
+
+[tasks."test:setup"]
+depends = ["setup"]
+run = "pnpm playwright install chromium"
+
+[tasks.test]
+depends = ["setup", "build", "test:setup"]
+run = "pnpm test"
+
+[tasks."test:regenerate"]
+depends = ["setup", "build", "test:setup"]
+run = "pnpm test:regenerate"
+
+[tasks.release]
+depends = ["setup", "ci", "test"]
+confirm = { message = "Are you sure you want to release?", default = "no" }
+run = "pnpm release && git push --follow-tags"

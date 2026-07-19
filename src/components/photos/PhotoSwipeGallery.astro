@@ -1,0 +1,74 @@
+---
+import type { InferEntrySchema } from 'astro:content'
+import { Image } from 'astro:assets'
+import { downscaleImage } from '@/util/images'
+
+export interface Props {
+  photos: InferEntrySchema<'albums'>['photos']
+}
+
+const { photos } = Astro.props
+
+const optimizedPhotos = await Promise.all(
+  photos.map(async (photo) => {
+    const { optimizedImage, downscaledImage } = await downscaleImage(
+      photo.src,
+      {
+        width: 800
+      }
+    )
+
+    return {
+      description: photo.description,
+      optimizedImage,
+      downscaledImage
+    }
+  })
+)
+---
+
+<photoswipe-gallery>
+  <div class="columns-1 gap-2 sm:columns-2 md:columns-3">
+    {
+      optimizedPhotos.map(
+        ({ optimizedImage, downscaledImage, description }, index) => (
+          <a
+            href={optimizedImage.src}
+            data-pswp-height={optimizedImage.height}
+            data-pswp-width={optimizedImage.width}
+            data-pswp-thumb={downscaledImage.src}
+          >
+            <Image
+              src={downscaledImage.src}
+              class="mt-0 mr-0 mb-2 ml-0 block w-full break-inside-avoid"
+              alt={description ?? `Photo #${index + 1}`}
+              height={downscaledImage.height}
+              width={downscaledImage.width}
+            />
+          </a>
+        )
+      )
+    }
+  </div>
+</photoswipe-gallery>
+
+<script>
+  import { createPhotoSwipeGallery } from '@/plugins/photoSwipePlugin'
+
+  class PhotoSwipeGallery extends HTMLElement {
+    onDestroy?: () => void
+
+    async connectedCallback() {
+      const galleryElement = this.children[0] as HTMLDivElement
+
+      this.onDestroy = await createPhotoSwipeGallery(galleryElement)
+    }
+
+    disconnectedCallback() {
+      this.onDestroy?.()
+    }
+  }
+
+  if (!customElements.get('photoswipe-gallery'))
+    customElements.define('photoswipe-gallery', PhotoSwipeGallery)
+</script>

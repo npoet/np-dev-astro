@@ -1,0 +1,58 @@
+---
+import Footer from '@/components/layout/Footer.astro'
+import Header from '@/components/layout/Header.astro'
+import Prose from '@/components/layout/Prose.astro'
+import BaseLayout, {
+  type Props as BaseLayoutProps
+} from '@/layouts/BaseLayout.astro'
+import ScrollProgressPlugin from '@/plugins/ScrollProgressPlugin.astro'
+import ScrollToTopPlugin from '@/plugins/ScrollToTopPlugin.astro'
+import config from '@/theme.config'
+
+export type Props = BaseLayoutProps & {
+  frontmatter: Partial<{
+    scrollProgress: boolean
+    activeHeaderLink: string
+    scrollToTop: boolean
+    searchable: boolean
+  }>
+}
+
+const { frontmatter } = Astro.props
+
+const {
+  scrollProgress = config.scrollProgress,
+  scrollToTop = config.scrollToTop,
+  activeHeaderLink,
+  searchable = false
+} = frontmatter
+---
+
+<BaseLayout frontmatter={frontmatter}>
+  <div
+    class="mx-auto flex min-h-svh w-full max-w-[90%] flex-col justify-between md:max-w-3xl"
+  >
+    <Header activeHeaderLink={activeHeaderLink} />
+    <slot name="top" />
+
+    <aside
+      class="scrollbar-hide fixed h-screen w-fit max-w-sm -translate-x-full overflow-y-auto overscroll-y-none pr-8"
+    >
+      <slot name="aside" />
+    </aside>
+
+    <main
+      id="main"
+      class="mt-6 sm:mt-12"
+      data-pagefind-body={searchable ? true : undefined}
+    >
+      <Prose class="mb-6 sm:mb-12">
+        <slot />
+      </Prose>
+    </main>
+    <slot name="bottom" />
+    <Footer />
+  </div>
+  {scrollProgress && <ScrollProgressPlugin />}
+  {scrollToTop && <ScrollToTopPlugin />}
+</BaseLayout>

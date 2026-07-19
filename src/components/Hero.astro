@@ -1,0 +1,50 @@
+---
+import logo from '@/assets/logo.svg'
+import { Image } from 'astro:assets'
+
+export interface Props {
+  frontmatter: Partial<{
+    background: boolean
+    logo: boolean
+  }>
+}
+
+const { background, logo: showLogo } = Astro.props.frontmatter
+---
+
+<div class="w-fit">
+  <div
+    class:list={[
+      'text-accent relative mb-1 w-fit pb-2 text-5xl font-bold tracking-tight sm:mb-2 sm:text-8xl',
+      {
+        'mb-2 sm:mb-8': background
+      }
+    ]}
+  >
+    {
+      background && (
+        <span
+          class:list={['bg-accent/75 absolute inset-0 h-full w-full blur-3xl']}
+        />
+      )
+    }
+    <div
+      class="relative flex items-center gap-4 sm:gap-8"
+      transition:name="branding"
+    >
+      {
+        showLogo && (
+          <Image
+            loading="eager"
+            alt="Nordlys logo, simplified northern lights aurora visualization"
+            src={logo}
+            class="h-12 w-fit object-scale-down sm:h-24"
+          />
+        )
+      }
+      <h1>
+        <slot />
+      </h1>
+    </div>
+  </div>
+</div>

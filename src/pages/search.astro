@@ -1,0 +1,106 @@
+---
+import PageLayout, {
+  type Props as PageLayoutProps
+} from '@/layouts/PageLayout.astro'
+import PagefindPlugin from '@/plugins/PagefindPlugin.astro'
+
+const frontmatter: PageLayoutProps['frontmatter'] = {
+  title: 'Search',
+  activeHeaderLink: '/search'
+}
+---
+
+<PageLayout {frontmatter}>
+  <h1>{frontmatter.title}</h1>
+  <search-input class="flex w-full items-center justify-center gap-8">
+    <input
+      type="text"
+      placeholder="Type to search"
+      class="border-accent w-full rounded-sm border p-4 sm:w-[50%]"
+    />
+    <button id="search-clear" class="clickable invisible text-xl">Clear</button>
+  </search-input>
+  <h2 id="results-heading">Type to search</h2>
+  <ul id="results-list" class="list-none p-0"></ul>
+
+  <PagefindPlugin />
+</PageLayout>
+
+<script>
+  interface PagefindResult {
+    data: () => Promise<{
+      url: string
+      meta: { title: string }
+      excerpt: string
+    }>
+  }
+
+  class SearchInput extends HTMLElement {
+    async connectedCallback() {
+      const searchInput = this.querySelector('input')
+      const clearBtn = this.querySelector('button')
+
+      const resultsHeading = document.querySelector('#results-heading')
+      const resultsContainer = document.querySelector('#results-list')
+
+      if (!searchInput || !clearBtn || !resultsHeading || !resultsContainer)
+        return
+
+      const onInput = async () => {
+        const searchQuery = searchInput.value
+
+        if (searchQuery === '') clearBtn.classList.add('invisible')
+        else clearBtn.classList.remove('invisible')
+
+        const { results } = await window.pagefind.search(searchQuery)
+
+        resultsHeading.innerHTML =
+          results.length > 0 ? `Results (${results.length})` : 'No Results'
+
+        resultsContainer.innerHTML = ''
+
+        await Promise.all(
+          results.slice(0, 15).map(async (r) => {
+            const li = document.createElement('li')
+            const data = await (r as PagefindResult).data()
+
+            const a = document.createElement('a')
+            a.className = 'text-xl font-normal'
+            a.href = data.url
+            a.textContent = data.meta.title
+
+            const div = document.createElement('div')
+            div.className = 'opacity-75 mt-4'
+            const escapedExcerpt = document.createElement('div')
+            escapedExcerpt.textContent = data.excerpt
+            div.innerHTML = escapedExcerpt.innerHTML.replace(
+              /&lt;mark&gt;(.*?)&lt;\/mark&gt;/g,
+              '<mark>$1</mark>'
+            )
+
+            li.appendChild(a)
+            li.appendChild(div)
+
+            resultsContainer.appendChild(li)
+          })
+        )
+
+        if (results.length > 5) {
+          const remainingLi = document.createElement('li')
+          remainingLi.innerHTML = `... and ${results.length - 5} more`
+          resultsContainer.appendChild(remainingLi)
+        }
+      }
+
+      searchInput.addEventListener('input', onInput)
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = ''
+        onInput()
+      })
+    }
+  }
+
+  if (!customElements.get('search-input'))
+    customElements.define('search-input', SearchInput)
+</script>

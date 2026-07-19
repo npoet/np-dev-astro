@@ -1,0 +1,76 @@
+---
+const { class: className = '', ...rest } = Astro.props
+---
+
+<flip-card>
+  <div class={`relative grid ${className}`} {...rest}>
+    <div
+      id="front"
+      class="col-start-1 row-start-1 h-full transition-[opacity,visibility] duration-500 ease-in-out motion-reduce:transition-none"
+    >
+      <slot name="front" />
+    </div>
+    <div
+      id="back"
+      class="invisible col-start-1 row-start-1 h-full opacity-0 transition-[opacity,visibility] duration-500 ease-in-out motion-reduce:transition-none"
+    >
+      <slot name="back" />
+    </div>
+    <button
+      class="absolute top-2 right-2 flex items-center"
+      title="Toggle card"
+      aria-label="closed"
+    >
+      <span
+        aria-hidden="true"
+        id="toggle"
+        class="clickable iconify tabler--plus text-4xl transition-transform duration-500 ease-in-out"
+      >
+      </span>
+    </button>
+  </div>
+</flip-card>
+
+<script>
+  function closeCard(card: Element) {
+    const front = card.querySelector('#front')
+    const back = card.querySelector('#back')
+    const button = card.querySelector('button')
+    const icon = card.querySelector('#toggle')
+
+    if (!front || !back || !icon || !button) return
+
+    front.classList.remove('invisible', 'opacity-0')
+    back.classList.add('invisible', 'opacity-0')
+    icon.classList.remove('rotate-45')
+    button.setAttribute('aria-label', 'closed')
+  }
+
+  class FlipCard extends HTMLElement {
+    connectedCallback() {
+      const front = this.querySelector('#front')
+      const back = this.querySelector('#back')
+      const icon = this.querySelector('#toggle')
+      const button = this.querySelector('button')
+
+      if (!front || !back || !icon || !button) return
+
+      const open = () => {
+        document.querySelectorAll('flip-card').forEach(closeCard)
+
+        front.classList.add('invisible', 'opacity-0')
+        back.classList.remove('invisible', 'opacity-0')
+        icon.classList.add('rotate-45')
+        button.setAttribute('aria-label', 'open')
+      }
+
+      button.addEventListener('click', () => {
+        if (!front.classList.contains('invisible')) open()
+        else closeCard(this)
+      })
+    }
+  }
+
+  if (!customElements.get('flip-card'))
+    customElements.define('flip-card', FlipCard)
+</script>

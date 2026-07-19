@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+@import './photoswipe.css';
+@import './color-schemes.css' layer(base);
+@reference './theme.css';
+
+@custom-variant dark (&:where([data-mode=dark], [data-mode=dark] *));
+
+@layer base {
+  :root {
+    @apply bg-accent-bg selection:bg-accent/75 overflow-y-scroll scroll-smooth font-sans underline-offset-4 selection:text-white dark:selection:text-black;
+
+    img[data-img-embed=''],
+    img[data-img-embed='true'] {
+      border-color: rgb(var(--accent));
+      border-radius: var(--radius-sm);
+      border-width: 1px;
+    }
+
+    .zoom-overlay {
+      background-color: #000000bf !important;
+    }
+  }
+}
+
+@utility clickable {
+  @apply hover:text-accent cursor-pointer opacity-75 transition duration-500 ease-in-out hover:opacity-100;
+}
