@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.1",
   "description": "Personal portfolio site based on @FjellOverflow/nordlys",
-  "author": "npoet",
+  "author": "Nicholas Poet",
   "repository": {
     "type": "git",
     "url": "https://github.com/npoet/npoet-dev-astro.git"
