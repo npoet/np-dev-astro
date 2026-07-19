@@ -3,8 +3,8 @@ import { defineThemeConfig } from './types'
 export default defineThemeConfig({
   site: 'https://npoet.dev',
   title: 'npoet.dev',
-  description: 'A minimal Astro blog theme',
-  author: 'npoet',
+  description: 'Personal portfolio site based on @FjellOverflow/nordlys',
+  author: 'Nicholas Poet',
   navbarItems: [
     { label: 'About', href: '/about/' }
   ],
